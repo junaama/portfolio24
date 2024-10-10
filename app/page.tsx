@@ -108,7 +108,6 @@ export default function Portfolio() {
   const resumeRef = useRef(null)
 
   const aboutInView = useInView(aboutRef, { once: true, amount: 0.5 })
-  const portfolioInView = useInView(portfolioRef, { once: true, amount: 0.5 })
   const skillsInView = useInView(skillsRef, { once: true, amount: 0.5 })
   const contactInView = useInView(contactRef, { once: true, amount: 0.5 })
   const resumeInView = useInView(resumeRef, { once: true, amount: 0.5 })
