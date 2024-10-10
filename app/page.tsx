@@ -12,30 +12,88 @@ import Link from "next/link"
 import { useState } from "react"
 import { toast } from "sonner"
 
-// Sample data for projects
+
 const projects = [
   {
-    title: "Project 1",
-    description: "A brief description of Project 1",
-    image: "/placeholder.svg",
+    title: "iluvwords",
+    description: "word games all based on a word of the day",
+    image: "/iluvwords.png",
+    github: "https://github.com/junaama/iluvwords",
+    demo: "https://iluvwords.vercel.com",
+  },
+  {
+    title: "ChatIsland",
+    description: "A chatbot designed to go vacation-mode and provide a relaxing and fun conversation experience.",
+    image: "/chatisland.png",
+    github: "https://github.com/junaama/chatbot-th",
+    demo: "https://nextjs-fastapi-starter-kappa-three.vercel.app/",
+  },
+  {
+    title: "Threads of Tech Job Board",
+    description: "Job board featuring fashion-tech opportunities",
+    image: "/jobboard.png",
+    github: "",
+    demo: "https://jobs.threadsoftech.com/"
+  },
+  {
+    title: "PULP: Private Uncollateralized Lending Protocol",
+    description: "I used Solidity & Foundry to develop the smart contract for a lending model using self-sovereign identification.",
+    image: "https://res.cloudinary.com/dzfyk3r12/image/upload/v1673550276/projects_2Fbfx1i_2Fimages_2FScreen_20Shot_202022-10-08_20at_209.53.07_20PM_yawemf.png",
+    github: "https://github.com/akerbabber/PULP-blockchain",
+    demo: "https://ethglobal.com/showcase/pulp-bfx1i",
+  },
+  {
+    title: "Coven Cats",
+    description: "I used NextJS, Typescript, Foundry, Solidity, Infura, to develop this project. Explored upgradeable contracts and web3 libraries.",
+    image: "https://res.cloudinary.com/dzfyk3r12/image/upload/v1673549802/Screen_Shot_2023-01-12_at_1.55.39_PM_yvvcvr.png",
     github: "https://github.com/yourusername/project1",
-    demo: "https://project1-demo.com",
+    demo: "https://covencats.xyz",
   },
   {
-    title: "Project 2",
-    description: "A brief description of Project 2",
-    image: "/placeholder.svg",
-    github: "https://github.com/yourusername/project2",
-    demo: "https://project2-demo.com",
+    title: "Mighty Axolotl",
+    description: "An NFT collection built with Solidity, React, and Typescript",
+    image: "https://res.cloudinary.com/dzfyk3r12/image/upload/v1630465097/Screen_Shot_2021-08-31_at_7.49.27_PM_vtd39o.png",
+    github: "https://github.com/junaama/mightyaxolotl-webapp",
+    demo: "https://mightyaxolotl.com",
   },
   {
-    title: "Project 3",
-    description: "A brief description of Project 3",
-    image: "/placeholder.svg",
-    github: "https://github.com/yourusername/project3",
-    demo: "https://project3-demo.com",
+    title: "Axess",
+    description: "Axess takes advantage of the popularity of tools such as CodePen and JSBin among those learning web development by offering an NPM Package that allows for seamless integration of online IDE's into a web accessibility education tool. This low-overhead solution may be an opportunity to introduce millions of aspiring web developers, regardless of background, to web accessibility.",
+    // image: "/placeholder.svg",
+    github: "https://github.com/omerdemirkan/axess",
+    demo: "https://www.npmjs.com/package/axess",
+  },
+  {
+    title: "Moonstock",
+    description: "MoonStock pulls up-to-date data from Reddit and Twitter, finds the sentiment of the comments/tweets, and provides a recommendation to Buy, Hold, or Sell based on the net sentiment, confidence score, and top comments from social media platforms like Twitter and Reddit.",
+    image: "/moonstock.png",
+    github: "https://github.com/junaama/hackillinois",
+    demo: "https://moonstock.netlify.app/",
+  },
+  {
+    title: "Mood Verse",
+    description: "Mood verse will generate a verse from the bible based on your mood! You can state your mood through a text input, or speech input.",
+    image: "https://res.cloudinary.com/dzfyk3r12/image/upload/v1598052284/Screenshot_from_2020-08-21_19-20-13_c7a0bz.png",
+    github: "https://github.com/junaama/Mood-Verse",
+    demo: "https://mood-verse.herokuapp.com/",
+  },
+  {
+    title: "Covid-18+",
+    description: "Dating application with a COVID-19 theme",
+    image: "https://res.cloudinary.com/dzfyk3r12/image/upload/v1595628782/Screenshot_from_2020-07-24_18-11-19_pblfld.png",
+    github: "https://github.com/junaama/COVID-18-",
+    demo: "https://covating-app.netlify.app/",
+  },
+  {
+    title: "Word Finder",
+    description: "Find words based on a set of linguistic constraints!",
+    image: "https://res.cloudinary.com/dzfyk3r12/image/upload/v1595628780/Screenshot_from_2020-07-24_18-10-52_wdd9xb.png",
+    github: "https://github.com/junaama/word-finder",
+    demo: "https://wordfinder.netlify.app/",
   },
 ]
+
+const mySkills = ["JavaScript", "React", "Typescript", "SQL/NoSQL", "Next JS", "GraphQL", "TailwindCSS", "Node JS", "Google Cloud/AWS", "Python", "Django", "FastAPI", "Docker", "Swift"]
 
 const fadeInUpVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -120,14 +178,13 @@ export default function Portfolio() {
     <div className="flex flex-col min-h-screen bg-blue-50 text-blue-900">
       <header className="px-4 lg:px-6 h-14 flex items-center justify-center bg-blue-100">
         <nav className="flex gap-4 sm:gap-6">
-  
-          <Link className="text-sm font-medium hover:text-blue-600 hover:underline underline-offset-4" href="#portfolio">
+          <Link className="text-sm font-medium hover:text-blue-600 hover:underline underline-offset-4" href="#portfolio" target="_blank" rel="noopener noreferrer">
             Portfolio
           </Link>
-          <Link className="text-sm font-medium hover:text-blue-600 hover:underline underline-offset-4" href="#skills">
+          <Link className="text-sm font-medium hover:text-blue-600 hover:underline underline-offset-4" href="#skills" target="_blank" rel="noopener noreferrer">
             Skills
           </Link>
-          <Link className="text-sm font-medium hover:text-blue-600 hover:underline underline-offset-4" href="#contact">
+          <Link className="text-sm font-medium hover:text-blue-600 hover:underline underline-offset-4" href="#contact" target="_blank" rel="noopener noreferrer">
             Contact
           </Link>
         </nav>
@@ -156,7 +213,7 @@ export default function Portfolio() {
           id="portfolio"
           ref={portfolioRef}
           initial="hidden"
-          animate={portfolioInView ? "visible" : "hidden"}
+          animate="visible"
           variants={fadeInUpVariants}
           className="w-full py-12 md:py-24 lg:py-32 bg-zinc-100 flex items-center justify-center"
         >
@@ -164,29 +221,29 @@ export default function Portfolio() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center text-black ">My Projects</h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 justify-center">
               {projects.map((project, index) => (
-                <Card key={index} className="bg-white  transition-colors duration-300 cursor-pointer">
+                <Card key={index} className="bg-white transition-colors duration-300 cursor-pointer">
                   <CardHeader>
                     <CardTitle className=" text-center">{project.title}</CardTitle>
                     <CardDescription className=" text-center">{project.description}</CardDescription>
                   </CardHeader>
                   <CardContent className="flex justify-center">
-                    <Image
+                    {project.image && <Image
                       src={project.image}
                       alt={project.title}
-                      width={300}
-                      height={200}
-                      className="w-full h-[200px] object-cover rounded-md"
-                    />
+                      width={640}
+                      height={300}
+                      className="w-full  object-cover rounded-md"
+                    />}
                   </CardContent>
                   <CardFooter className="flex justify-center space-x-4">
                     <Button asChild variant="outline" className="">
-                      <Link href={project.github}>
+                      <Link href={project.github} target="_blank" rel="noopener noreferrer">
                         <Github className="mr-2 h-4 w-4" />
                         GitHub
                       </Link>
                     </Button>
                     <Button asChild className="">
-                      <Link href={project.demo}>Demo</Link>
+                      <Link href={project.demo} target="_blank" rel="noopener noreferrer">Demo</Link>
                     </Button>
                   </CardFooter>
                 </Card>
@@ -205,7 +262,7 @@ export default function Portfolio() {
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center text-blue-800">My Skills</h2>
             <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center">
-              {["HTML", "CSS", "JavaScript", "React", "Next.js", "Tailwind CSS", "Node.js", "Git"].map((skill, index) => (
+              {mySkills.map((skill, index) => (
                 <div
                   key={index}
                   className="flex items-center justify-center p-4 bg-white rounded-md text-blue-700 shadow-sm hover:shadow-md transition-shadow duration-300"
@@ -217,43 +274,43 @@ export default function Portfolio() {
           </div>
         </motion.section>
         <motion.section
-    id="contact"
-    ref={contactRef}
-    initial="hidden"
-    animate={contactInView ? "visible" : "hidden"}
-    variants={fadeInUpVariants}
-    className="w-full py-12 md:py-24 lg:py-32 bg-zinc-100 flex items-center justify-center"
-  >
-    <div className="container px-4 md:px-6">
-      <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center text-black">Contact Me</h2>
-      <form onSubmit={handleContactSubmit} className="max-w-md mx-auto space-y-4">
-        <Input 
-          placeholder="Your Name" 
-          className="bg-white" 
-          value={contactName}
-          onChange={(e) => setContactName(e.target.value)}
-          required
-        />
-        <Input 
-          type="email" 
-          placeholder="Your Email" 
-          className="bg-white" 
-          value={contactEmail}
-          onChange={(e) => setContactEmail(e.target.value)}
-          required
-        />
-        <Textarea 
-          placeholder="Your Message" 
-          className="bg-white" 
-          value={contactMessage}
-          onChange={(e) => setContactMessage(e.target.value)}
-          required
-        /> <div className="flex justify-center">
-        <Button type="submit" className="">Send Message</Button>
-      </div>
-    </form>
-  </div>
-</motion.section>
+          id="contact"
+          ref={contactRef}
+          initial="hidden"
+          animate={contactInView ? "visible" : "hidden"}
+          variants={fadeInUpVariants}
+          className="w-full py-12 md:py-24 lg:py-32 bg-zinc-100 flex items-center justify-center"
+        >
+          <div className="container px-4 md:px-6">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center text-black">Contact Me</h2>
+            <form onSubmit={handleContactSubmit} className="max-w-md mx-auto space-y-4">
+              <Input
+                placeholder="Your Name"
+                className="bg-white"
+                value={contactName}
+                onChange={(e) => setContactName(e.target.value)}
+                required
+              />
+              <Input
+                type="email"
+                placeholder="Your Email"
+                className="bg-white"
+                value={contactEmail}
+                onChange={(e) => setContactEmail(e.target.value)}
+                required
+              />
+              <Textarea
+                placeholder="Your Message"
+                className="bg-white"
+                value={contactMessage}
+                onChange={(e) => setContactMessage(e.target.value)}
+                required
+              /> <div className="flex justify-center">
+                <Button type="submit" className="">Send Message</Button>
+              </div>
+            </form>
+          </div>
+        </motion.section>
         <motion.section
           id="request-resume"
           ref={resumeRef}
@@ -284,16 +341,15 @@ export default function Portfolio() {
         <div className="text-center">
           <p className="text-xs text-blue-600 mb-4">© 2024 {process.env.NEXT_PUBLIC_NAME}. All rights reserved.</p>
           <nav className="flex justify-center gap-4 sm:gap-6">
-            <Link className="text-blue-600 hover:text-blue-800" href={process.env.NEXT_PUBLIC_GITHUB || ""}>
+            <Link className="text-blue-600 hover:text-blue-800" href={process.env.NEXT_PUBLIC_GITHUB || ""} target="_blank" rel="noopener noreferrer">
               <span className="sr-only">GitHub</span>
               <Github className="h-4 w-4" />
             </Link>
-            <Link className="text-blue-600 hover:text-blue-800" href={process.env.NEXT_PUBLIC_LINKEDIN || ""
-            }>
+            <Link className="text-blue-600 hover:text-blue-800" href={process.env.NEXT_PUBLIC_LINKEDIN || ""} target="_blank" rel="noopener noreferrer">
               <span className="sr-only">LinkedIn</span>
               <Linkedin className="h-4 w-4" />
             </Link>
-            <Link className="text-blue-600 hover:text-blue-800" href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}` || ""}>
+            <Link className="text-blue-600 hover:text-blue-800" href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}` || ""} target="_blank" rel="noopener noreferrer">
               <span className="sr-only">Email</span>
               <Mail className="h-4 w-4" />
             </Link>
