@@ -177,13 +177,13 @@ export default function Portfolio() {
     <div className="flex flex-col min-h-screen bg-blue-50 text-blue-900">
       <header className="px-4 lg:px-6 h-14 flex items-center justify-center bg-blue-100">
         <nav className="flex gap-4 sm:gap-6">
-          <Link className="text-sm font-medium hover:text-blue-600 hover:underline underline-offset-4" href="#portfolio" target="_blank" rel="noopener noreferrer">
+          <Link className="text-sm font-medium hover:text-blue-600 hover:underline underline-offset-4" href="#portfolio" >
             Portfolio
           </Link>
-          <Link className="text-sm font-medium hover:text-blue-600 hover:underline underline-offset-4" href="#skills" target="_blank" rel="noopener noreferrer">
+          <Link className="text-sm font-medium hover:text-blue-600 hover:underline underline-offset-4" href="#skills" >
             Skills
           </Link>
-          <Link className="text-sm font-medium hover:text-blue-600 hover:underline underline-offset-4" href="#contact" target="_blank" rel="noopener noreferrer">
+          <Link className="text-sm font-medium hover:text-blue-600 hover:underline underline-offset-4" href="#contact">
             Contact
           </Link>
         </nav>
